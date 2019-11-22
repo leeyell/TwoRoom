@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour { //
     public Camera fpsCam;
 
    void Start () {
-      
+        Cursor.lockState = CursorLockMode.Locked;
    }
    
    void Update () {
