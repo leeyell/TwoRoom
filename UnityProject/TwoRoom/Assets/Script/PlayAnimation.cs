@@ -6,12 +6,14 @@ public class PlayAnimation : MonoBehaviour
 {    
     private GameObject target;  // 애니메이션을 재생할 물건.
     private Animation anim;
-    public AnimationClip clip;
- 
+    private string animName;
+    private bool play;
     // Start is called before the first frame update
     void Start()
     {
-
+        play = false;
+        anim = gameObject.GetComponent<Animation>();
+        animName = AnimationName();
     }
 
     // Update is called once per frame
@@ -20,10 +22,17 @@ public class PlayAnimation : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             target = CastRay();
-            if (target.tag == "anim") {
-                anim = target.GetComponent<Animation> ();
-                anim.clip = clip;
-                anim.Play("Drawer1");
+            if (target == gameObject &&  !play) {
+                anim[animName].speed = 1;
+                anim.Play(animName);
+                play = true;
+                anim.wrapMode = WrapMode.Once;
+            }
+            else if (target == gameObject && play) {
+                anim[animName].speed = -1;
+                anim.Play(animName);
+                play = false;
+                anim.wrapMode = WrapMode.Once;
             }
         }
     }
@@ -39,6 +48,14 @@ public class PlayAnimation : MonoBehaviour
             return hit.collider.gameObject; // 히트 된 오브젝트를 리턴.
         }
         return null;
+    }
+
+    public string AnimationName() {
+        string  animName = "";
+        foreach (AnimationState state in anim) {
+            animName = state.name;
+        }
+        return animName;
     }
     
 }
