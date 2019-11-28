@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 120002a3a31dc4d459f5f2c49c387e78
+timeCreated: 1491733026
+licenseType: Store
+ShaderImporter:
+  defaultTextures:
+  - _RunesAlpha: {fileID: 2800000, guid: 9e13ac76dcf91b14a9a26ada4f3fa8ec, type: 3}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

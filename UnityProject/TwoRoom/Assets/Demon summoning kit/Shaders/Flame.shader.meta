@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 0734ccadfd0406b43a955fa8d1d6dd24
+timeCreated: 1491733149
+licenseType: Store
+ShaderImporter:
+  defaultTextures:
+  - _Candleflame: {fileID: 2800000, guid: c7277019ca966a14385ca97e3feb005f, type: 3}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
