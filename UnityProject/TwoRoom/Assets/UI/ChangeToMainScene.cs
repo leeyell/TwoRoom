@@ -7,7 +7,7 @@ public class ChangeToMainScene : MonoBehaviour
 {
     
     public void ChangeScene() {
-        SceneManager.LoadScene("Demo");
+        SceneManager.LoadScene("LoadingScene");
     }
     
 }

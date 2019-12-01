@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour { //
 
     public Camera fpsCam;
 
+
    void Start () {
         Cursor.lockState = CursorLockMode.Locked;
    }
@@ -16,6 +17,7 @@ public class PlayerController : MonoBehaviour { //
         MoveCtrl();
         RotCtrl();
     }
+
 
     void MoveCtrl() { //키보드 W,S,A,D Player 이동 함수
         if (Input.GetKey(KeyCode.W))

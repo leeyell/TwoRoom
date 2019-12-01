@@ -1,10 +1,15 @@
 fileFormatVersion: 2
 guid: 15e2c53e9e34ce041a8bd9994d014de9
-timeCreated: 1450900423
-licenseType: Store
 MonoImporter:
+  externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - topShards: {instanceID: 0}
+  - bottomShards: {instanceID: 0}
+  - glassBreak: {instanceID: 0}
+  - windowOpen: {instanceID: 0}
+  - windowClose: {instanceID: 0}
+  - font: {fileID: 12800000, guid: 9f34301ca5cd0f74ba280ce6a929025f, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

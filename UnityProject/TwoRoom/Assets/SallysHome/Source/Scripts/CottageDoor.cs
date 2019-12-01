@@ -23,7 +23,7 @@ public class CottageDoor : MonoBehaviour {
 		if (this.gameObject.isStatic) {
 			Destroy (this);
 		}
-		doorOpen = Quaternion.Euler (0, doorOpenAngle, 0);
+		doorOpen = Quaternion.Euler (0, doorOpenAngle, 0);	
 		doorClosed = Quaternion.Euler (0, doorClosedAngle, 0);
 		if (GameObject.FindGameObjectWithTag ("Player") != null) {
 			player = GameObject.FindGameObjectWithTag ("Player").transform;
@@ -68,15 +68,15 @@ public class CottageDoor : MonoBehaviour {
 		if (playerInRange) {
 			string message;
 			GUIStyle style = new GUIStyle ();
-			style.fontSize = 35;
+			style.fontSize = 20;
 			style.normal.textColor = Color.white;
 			style.font = font;
 			if (!doorStatus) {
-				message = "Press E to open";
+				message = "문을 열려면 E 를 누르십시오.";
 			} else {
-				message = "Press E to close";
+				message = "문을 닫으려면 E 를 누르십시오.";
 			}
-			Rect rect = new Rect (Screen.width / 2 - 100, Screen.height / 2 - 12f, 100, 25);
+			Rect rect = new Rect (Screen.width / 2 - 100, Screen.height / 2 + 10f, 100, 25);
 			GUI.Label (rect, message, style);
 		}
 	}

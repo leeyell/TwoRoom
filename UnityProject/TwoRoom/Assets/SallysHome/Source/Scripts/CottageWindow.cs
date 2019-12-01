@@ -118,11 +118,11 @@ public class CottageWindow : MonoBehaviour {
 	void OnGUI(){
 		if (playerInRange) {
 			GUIStyle style = new GUIStyle ();
-			style.fontSize = 35;
+			style.fontSize = 20;
 			style.normal.textColor = Color.white;
 			style.font = font;
-			Rect rect = new Rect (Screen.width / 2 - 200, Screen.height / 2 - 12f, 200, 25);
-			GUI.Label (rect, "E to open, G to break windows", style);
+			Rect rect = new Rect (Screen.width / 2 - 150, Screen.height / 2 + 10f, 200, 25);
+			GUI.Label (rect, "창문을 열려면 E, 깨려면 G 를 누르십시오.", style);
 		}
 	}
 

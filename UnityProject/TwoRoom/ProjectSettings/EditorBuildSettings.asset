@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/SallysHome/Demo/Demo.unity
     guid: d9286a6e6fbd42d43aa6fd134b044e0f
+  - enabled: 1
+    path: Assets/Scenes/LoadingScene.unity
+    guid: faaea10223e0b064b965ac48c001872d
   m_configObjects: {}
