@@ -17,6 +17,8 @@ public class CottageDoor : MonoBehaviour {
 	//bool doorMoving = false;
 	bool playerInRange;
 
+	public bool isOpened = false;
+
 	Transform player;
 
 	void Start() {
@@ -52,15 +54,17 @@ public class CottageDoor : MonoBehaviour {
 
 	IEnumerator moveDoor(Quaternion target) {
 		//doorMoving = true;
+		Debug.Log("나라는 문의 태그는..." + this.gameObject.tag);
+		if ((this.gameObject.tag == "HGdoor" && isOpened) || this.gameObject.tag != "HGdoor") {
+			while (Quaternion.Angle (transform.localRotation, target) > 0.5f) {
+				transform.localRotation = Quaternion.Slerp (transform.localRotation, target, Time.deltaTime * speed);
+				yield return null;
+			}
 
-		while (Quaternion.Angle (transform.localRotation, target) > 0.5f) {
-			transform.localRotation = Quaternion.Slerp (transform.localRotation, target, Time.deltaTime * speed);
+			doorStatus = !doorStatus;
+			//doorMoving = false;
 			yield return null;
 		}
-
-		doorStatus = !doorStatus;
-		//doorMoving = false;
-		yield return null;
 
 	}
 

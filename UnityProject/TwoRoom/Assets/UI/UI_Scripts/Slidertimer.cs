@@ -53,6 +53,7 @@ public class Slidertimer : MonoBehaviour
                 else
                 {
                     FindObjectOfType<UIManager>().runTimer = false;
+                    GameObject.Find("GameManager").GetComponent<GameManager>().StartToFind();
                     count = 0;
                 }
             }

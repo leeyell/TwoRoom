@@ -34,6 +34,7 @@ public class UIManager : MonoBehaviour
 
     public void StartDialogue()
     {
+        Debug.Log("startdialogue 함수");
         FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
     }
 }

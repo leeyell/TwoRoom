@@ -7,11 +7,10 @@ public class PlayerController : MonoBehaviour { //
     public float rotSpeed = 3.0f;
     public Camera fpsCam;
 
-    public Rigidbody rb;
+    public GameObject resetPos;
 
 	void Start () {
         Cursor.lockState = CursorLockMode.Locked;
-	    rb = GetComponent<Rigidbody>();
     }
 	
 	void Update () {
@@ -100,5 +99,9 @@ public class PlayerController : MonoBehaviour { //
 
         this.transform.localRotation *= Quaternion.Euler(0, rotY, 0);
         fpsCam.transform.localRotation *= Quaternion.Euler(-rotX, 0, 0);
+    }
+
+    public void ResetPos() {
+        this.transform.position = resetPos.transform.position;
     }
 }

@@ -33,7 +33,7 @@ public class ObjectRandomShift : MonoBehaviour
         }      
     }
 
-    void RandomShift(){
+    public void RandomShift(){
         int count = 0;
         string indexString = "";
         while(count < 5){ // 5개 만큼 바꾸기.
@@ -55,7 +55,7 @@ public class ObjectRandomShift : MonoBehaviour
             }
         }
     }
-    void CancelShift(){
+    public void CancelShift(){
         Debug.Log("Cancel");
         for (int i = 0; i < RandomObjects.Length; i++){
             RandomObjects[i].transform.position = PastPos[i];

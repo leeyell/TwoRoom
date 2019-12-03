@@ -9,6 +9,7 @@ public class DialogueManager : MonoBehaviour
     public Text dialogueText;
     private Queue<string> sentences;
     public Animator animator;
+    public string currsentence;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +20,7 @@ public class DialogueManager : MonoBehaviour
     public void StartDialogue(Dialogue dialogue)
     {
         //애니메이터 실행
+        Debug.Log("애니메이터 실행");
         animator.SetBool("IsOpen", true);
         nameText.text = dialogue.name;
 
@@ -29,10 +31,10 @@ public class DialogueManager : MonoBehaviour
             sentences.Enqueue(sentence);
         }
 
-        DisplayNextSentence();
+        DisplayNextSentence(0);
     }
 
-    public void DisplayNextSentence()
+    public void DisplayNextSentence(int count)
     {
         if(sentences.Count == 0)
         {
@@ -40,9 +42,19 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
-        string sentence = sentences.Dequeue();
-        StopAllCoroutines();
-        StartCoroutine(TypeSentence(sentence));
+        if(count == 0 || count == 2)
+        {
+            string sentence = sentences.Dequeue();
+            currsentence = sentence;
+            StopAllCoroutines();
+            StartCoroutine(TypeSentence(sentence));    
+        }
+
+        else
+        {
+            StopAllCoroutines();
+            dialogueText.text = currsentence;
+        }        
     }
 
     //대사 한글자씩 나오게
