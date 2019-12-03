@@ -44,7 +44,6 @@ public class PlayAnimation : MonoBehaviour
         Physics.Raycast(ray, out hit);
 
         if (hit.collider != null) { //히트되었다면 여기서 실행
-            Debug.Log (hit.collider.name + " 클릭했다.");  
             return hit.collider.gameObject; // 히트 된 오브젝트를 리턴.
         }
         return null;

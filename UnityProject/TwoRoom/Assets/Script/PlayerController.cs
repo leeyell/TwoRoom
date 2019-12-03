@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour { //
 
         string obj_name = obj.name;
 
-        if (obj.transform.parent != null && obj.transform.parent.name != "Props"){ //부모가 있으면, obj를 obj의 부모로 갈아끼움.
+        if (obj.transform.parent != null && obj.transform.parent.name != "BeforeChange"){ //부모가 있으면, obj를 obj의 부모로 갈아끼움.
             obj_name = obj.transform.parent.name;
             obj = obj.transform.parent.gameObject; 
         }      

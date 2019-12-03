@@ -20,17 +20,17 @@ public class GameManager : MonoBehaviour
         
     }
 
-    // 집 전체에서 5개.. 
-
     public void Correct(GameObject obj){
         correct_Num++;
 
-        // 오브젝트 정답 처리 (outline)
         GameObject.Find(obj.name).GetComponent<Shiftable>().Found();
+        if (GameObject.Find(obj.name).GetComponent<Shiftable>() == null){
+            Debug.Log("님 개망함  ㅋㅋ");
+        }
 
         GameObject.Find("UIManager").GetComponent<UIManager>().Correct();
 
-        if (correct_Num == changed_num){ //clear
+        if (correct_Num == changed_num){ 
             GameClear();
         }
     }
@@ -58,7 +58,7 @@ public class GameManager : MonoBehaviour
     void GameStart(){
         // 컷씬
         StartCoroutine("FadeOut");
-
+        // * 문잠구기
 
         // ==================
         // * (1분 타이머 코루틴 호출)
@@ -77,7 +77,7 @@ public class GameManager : MonoBehaviour
     }
     void GameClear(){
         // ======================
-        // * 현관문 열림
+        // * 문 열림
         // * 타이머 멈춤
         // * (먼가 UI 변화)
         // ======================

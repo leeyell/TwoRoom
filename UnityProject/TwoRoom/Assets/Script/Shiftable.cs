@@ -37,8 +37,8 @@ public class Shiftable : MonoBehaviour
         Debug.Log("아웃라인");
         Outline outline = this.gameObject.AddComponent<Outline>();//target.AddComponent<Outline>();
         outline.OutlineMode = Outline.Mode.OutlineAll;
-        outline.OutlineColor = Color.green;
-        outline.OutlineWidth = 20f;
+        outline.OutlineColor = new Color(1, 1, 1, 1);
+        outline.OutlineWidth = 7f;
 
     }
     public void RemoveEffect(){
