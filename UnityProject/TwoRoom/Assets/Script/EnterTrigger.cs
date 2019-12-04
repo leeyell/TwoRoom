@@ -6,14 +6,14 @@ public class EnterTrigger : MonoBehaviour
 {
     public GameObject player;
     private Animation anim;
-    private string animName;
+    private string[] animNames;
     private bool isEntered;
     // Start is called before the first frame update
     void Start()
     {
         isEntered = false;
         anim = player.GetComponent<Animation>();
-        animName = AnimationName();
+        animNames = AnimationName();
     }
 
     // Update is called once per frame
@@ -28,18 +28,22 @@ public class EnterTrigger : MonoBehaviour
         {
             Debug.Log("플레이어가 창고 앞에 섰다리");
             isEntered = true;
-            anim.Play(animName);
+            anim.Play(animNames[0]);
             anim.wrapMode = WrapMode.Once;
 
         }
     }
     
 
-    public string AnimationName() {
+    public string[] AnimationName() {
         string  animName = "";
+        string[] animNames = new string[2];
+        int index = 0;
         foreach (AnimationState state in anim) {
             animName = state.name;
+            animNames[index] = animName;
+            index++;
         }
-        return animName;
+        return animNames;
     }
 }

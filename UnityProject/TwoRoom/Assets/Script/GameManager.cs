@@ -10,8 +10,14 @@ public class GameManager : MonoBehaviour
     public int correct_Num = 0; //몇 개를 맞췄는지
     public bool memorize;
 
+    public GameObject player;
+    private Animation playerAnim;
+    private string[] animNames;
+
     void Start()
     {
+        playerAnim = player.GetComponent<Animation>();
+        animNames = GameObject.Find("ShedEnterTrigger").GetComponent<EnterTrigger>().AnimationName();
         GameStart();
     }
 
@@ -65,12 +71,15 @@ public class GameManager : MonoBehaviour
         //player.transform.position = tr.position;
         Debug.Log("FadeIn Called");
         GameObject.Find("FadeOut").GetComponent<FadeOut>().StartFadeInAnim();
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1.5f);
+        playerAnim.Play(animNames[1]);
+        yield return new WaitForSeconds(1f);
     }
     void GameStart(){
         // 컷씬
         // CallFadeOut();
         // * 문잠구기
+        playerAnim.Play(animNames[1]);      // 플레이어 일어나는 애니메이션 재생
         FindObjectOfType<UIManager>().StartTimer();
         Debug.Log("나오면 뒤진다");
         // ==================

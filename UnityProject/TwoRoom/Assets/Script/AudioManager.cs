@@ -43,6 +43,7 @@ public class AudioManager : MonoBehaviour
     private float masterVolumeBGM = 1f;
 
     public AudioClip[] audioClips;  //오디오 소스들 저장
+    public string[] name;
     public Dictionary<string, AudioClip> audioClipDic;
 
     public AudioSource sfxPlayer;
@@ -54,32 +55,24 @@ public class AudioManager : MonoBehaviour
         bgmPlayer = transform.GetChild(0).GetComponent<AudioSource>();
 
         audioClipDic = new Dictionary<string, AudioClip>();
+        int i = 0;
         foreach (AudioClip a in audioClips)
         {
             audioClipDic.Add(a.name, a);
+            name[i] = a.name;
+            i++;
         }
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        PlayLoopSound("woodstep1");
+        PlayLoopSound(name[0]);
         bgmPlayer.Play();
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.M))
-        {
-            if (bgmPlayer.clip == audioClipDic["woodstep1"])
-            {
-                PlayLoopSound("1. 강한 노크");
-            } else
-            {
-                PlayLoopSound("woodstep1");
-            }
-            
-        }
     }
 
     // 한 번 재생 : 볼륨 매개변수로 지정
