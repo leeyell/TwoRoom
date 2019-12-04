@@ -13,38 +13,34 @@ public class StateManager : MonoBehaviour
     public Sprite stateImage4;
     public Sprite stateImage5;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
 
     public void ChangeState()
     {
         correctNum += 1;
         if (correctNum == 1)
         {
-            stateImage.sprite =  stateImage1;
+            stateImage.sprite = stateImage1;
         }
         if (correctNum == 2)
         {
-            stateImage.sprite =  stateImage2;
+            stateImage.sprite = stateImage2;
         }
         if (correctNum == 3)
         {
-            stateImage.sprite =  stateImage3;
+            stateImage.sprite = stateImage3;
         }
         if (correctNum == 4)
         {
-            stateImage.sprite =  stateImage4;
+            stateImage.sprite = stateImage4;
         }
         if (correctNum == 5)
         {
-            stateImage.sprite =  stateImage5;
+            stateImage.sprite = stateImage5;
         }
     }
     // Update is called once per frame
-    void Update() {
-
+    void Update()
+    {
+        
     }
 }

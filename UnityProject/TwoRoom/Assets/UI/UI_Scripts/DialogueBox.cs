@@ -4,23 +4,13 @@ using UnityEngine;
 
 public class DialogueBox : MonoBehaviour
 {
-    public void Update()
+    public int count = 0;
+    public void OnMouseDown()
     {
-
-        if (Input.GetKeyDown(KeyCode.X))
-        {
-            complete();
-        }
-    }
-   public int count = 0;
-   
-   public void complete()
-   {
-       count++;
-       Debug.Log("찍히니?");
-       FindObjectOfType<DialogueManager>().DisplayNextSentence(count);
-
-       if(count == 2)
+        Debug.Log("눌림");
+        count++;
+        FindObjectOfType<DialogueManager>().DisplayNextSentence(count);
+        if (count == 2)
             count = 0;
-   }
+    }
 }
