@@ -30,9 +30,6 @@ public class GameManager : MonoBehaviour
         correct_Num++;
 
         GameObject.Find(obj.name).GetComponent<Shiftable>().Found();
-        if (GameObject.Find(obj.name).GetComponent<Shiftable>() == null){
-            Debug.Log("님 개망함  ㅋㅋ");
-        }
 
         GameObject.Find("UIManager").GetComponent<UIManager>().Correct();
 
@@ -71,7 +68,7 @@ public class GameManager : MonoBehaviour
         //player.transform.position = tr.position;
         Debug.Log("FadeIn Called");
         GameObject.Find("FadeOut").GetComponent<FadeOut>().StartFadeInAnim();
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(0.5f);
         playerAnim.Play(animNames[1]);
         yield return new WaitForSeconds(1f);
     }

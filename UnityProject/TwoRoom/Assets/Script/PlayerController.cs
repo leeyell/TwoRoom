@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour { //
-    public float moveSpeed = 5.0f;
-    public float rotSpeed = 3.0f;
+    private float moveSpeed = 3.0f;
+    private float rotSpeed = 2.0f;
     public Camera fpsCam;
 
     public GameObject resetPos;
@@ -103,5 +103,6 @@ public class PlayerController : MonoBehaviour { //
 
     public void ResetPos() {
         this.transform.position = resetPos.transform.position;
+        this.transform.rotation = resetPos.transform.rotation;
     }
 }
